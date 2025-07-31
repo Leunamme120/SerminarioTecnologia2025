@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{times}
+\usepackage{url}
+
+\title{\textbf{BUENAS PRÁCTICAS PARA EL DESARROLLO DE APLICACIONES REACTIVAS}}
+\author{\textit{J. E. Jiménez López} \\ 7690-13-16349 \\ Universidad Mariano Gálvez \\ Programación Reactiva \\ \textit{ejimenezl@miumg.edu.gt}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Resumen}
+Este artículo analiza las buenas prácticas esenciales para el desarrollo de aplicaciones reactivas, centradas en los principios del Reactive Manifesto. A medida que las demandas de los usuarios crecen y los sistemas distribuidos se vuelven más complejos, la necesidad de sistemas más responsivos, resilientes, elásticos y orientados a mensajes se vuelve imprescindible. Se aborda el uso de frameworks como Spring WebFlux, RxJava y Akka, se explican los fundamentos técnicos de backpressure, asincronía y flujos de datos, y se destacan los patrones de diseño más eficaces en entornos reactivos.
+
+\noindent \textbf{Palabras clave:} programación reactiva, Reactive Manifesto, WebFlux, asincronía, resiliencia
+
+\section*{¿Qué es una aplicación reactiva?}
+La programación reactiva ha emergido como una respuesta a las limitaciones de los modelos tradicionales de desarrollo, especialmente en sistemas que requieren alta disponibilidad, baja latencia y escalabilidad. Su definición fue formalizada por el \textit{Reactive Manifesto} (2013), el cual establece cuatro principios clave: sistemas \textbf{responsivos} (responsive), \textbf{resilientes}, \textbf{elásticos} y \textbf{orientados a mensajes}.
+
+
+Un sistema \textbf{responsive} responde en tiempo adecuado, garantizando una buena experiencia de usuario. La \textbf{resiliencia} implica que el sistema permanece funcional ante fallas. La \textbf{elasticidad} permite escalar horizontal o verticalmente bajo demanda, y la orientación a \textbf{mensajes} desacopla componentes, fomentando la asincronía y la eficiencia.
+
+\begin{itemize}
+    \item Responsiva: Responde en tiempo razonable bajo cualquier circunstancia.
+\end{itemize}
+\begin{itemize}
+    \item Resiliente: Permanece funcional ante fallas.
+\end{itemize}
+\begin{itemize}
+    \item Elástica: Escala con eficiencia según la demanda.
+\end{itemize}
+\begin{itemize}
+    \item Orientada a mensajes: Usa comunicación asíncrona y no bloqueante.
+\end{itemize}
+
+
+Uno de los conceptos fundamentales en este paradigma es el uso de \textbf{flujos de datos asincrónicos}, que permiten reaccionar ante eventos de manera continua y eficiente. Librerías como \textit{RxJava} y el proyecto \textit{Reactor} de Spring implementan el patrón \textit{Observable} para gestionar estos flujos.
+
+En el contexto del ecosistema Java, \textbf{Spring WebFlux} es uno de los frameworks más utilizados. A diferencia de Spring MVC, que es sincrónico y bloqueante, WebFlux utiliza el modelo reactivo para manejar miles de peticiones concurrentes sin necesidad de múltiples hilos.
+
+\begin{itemize}
+    \item Aplicación diseñada para ser responsiva, resiliente, elástica y orientada a mensajes.
+\end{itemize}
+\begin{itemize}
+    \item Basada en el 'Reactive Manifesto'.
+\end{itemize}
+
+
+Otro aspecto clave es la \textbf{gestión de backpressure}, que consiste en controlar la velocidad de emisión de eventos para evitar saturar a los consumidores. Este principio es parte del estándar \textit{Reactive Streams}, adoptado por muchas librerías modernas.
+
+Además, herramientas como \textbf{Akka} y su \textit{actor model} permiten construir sistemas resilientes, donde cada actor representa una entidad independiente que procesa mensajes de forma concurrente y aislada. Esta arquitectura ayuda a construir sistemas distribuidos con fallos tolerables y recuperación automática.
+
+La integración de herramientas de \textbf{observabilidad} como Grafana, Prometheus y Zipkin desde el diseño inicial permite monitorear en tiempo real el comportamiento del sistema, detectar cuellos de botella y prevenir errores críticos.
+
+Por último, se recomiendan patrones arquitectónicos como \textbf{CQRS} y \textbf{Event Sourcing}, que separan la lectura de la escritura y permiten reconstruir el estado de los sistemas a partir de eventos. Estos patrones favorecen la escalabilidad y la trazabilidad, dos pilares del diseño reactivo.
+
+\section*{Programación Reactiva}
+Al hablar de Programación Reactiva lo primero que hay que saber si esto es algo nuevo o es ya un paradigma con solera. Los orígenes de los sistemas reactivos definitivamente no son nuevos y se remontan a los años 70 y 80 a pesar de que fueran adelantados a su tiempo y hoy en día sigan en "hype". Otro dato interesante es que desde que se publicó el Manifiesto Reactivo, pasó de ser una técnica no reconocida para la construcción de apps, a convertirse en parte de la estrategia general de una plataforma.
+
+"La programación reactiva es un paradigna de programación asíncrona orientada al flujo de datos y a la propagación del cambio."
+
+\section*{Diferencia entre Sistemas reactivos vs Programación reactiva.}
+\begin{itemize}
+    \item \textbf{Reactividad a nivel de sistema:} la base de un sistema reactivo es la coordinación de mensajes entre las aplicaciones permitiendo la concurrencia y desacople en los sistemas distribuidos. Y esta era la visión en los años 70 y 80 que exponía el Manifiesto Reactivo.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Reactividad a nivel de aplicación:} hace referencia a cuando aplicamos estos principios de software reactivos dentro de una sola aplicación y referente a como sus partes se comunican. La coordinación de los datos en las aplicaciones se basan en eventos, y no en mensajes.
+\end{itemize}
+
+\section*{Microservicios frente a monolitos}
+
+En pocas palabras, los microservicios son una colección de programas que forman una aplicación o sistema más grande. Se trata de una versión descompuesta de un proyecto de software más amplio con módulos poco acoplados que se comunican mediante una API (interfaz de programación de aplicaciones).
+
+Como resultado de su naturaleza poco acoplada, los microservicios pueden ser supervisados, probados y depurados de forma independiente sin causar tiempo de inactividad y sin impedir el rendimiento general de un sistema. En comparación con un sistema monolítico más tradicional, en el que las pruebas, la depuración o el despliegue de actualizaciones podrían causar una ralentización o un tiempo de inactividad significativos, los sistemas basados en microservicios permiten a los desarrolladores actualizar sin problemas varios componentes de una aplicación sin ninguno de estos inconvenientes.
+
+Además de estas ventajas, un microservicio puede escalar de forma eficiente e independiente sin obstaculizar el rendimiento de otros microservicios dentro de un sistema reactivo. Por ejemplo, si una plataforma de comercio electrónico experimenta un pico en la demanda de un microservicio responsable del procesamiento de pagos, en teoría, el sistema en general no experimentará ralentizaciones debido a la naturaleza escalable y elástica de los sistemas que aprovechan los microservicios.
+
+
+
+\section*{Los microservicios reactivos}
+Ahora que hemos establecido lo que son los microservicios y cómo funcionan, los microservicios reactivos son, en pocas palabras, módulos libremente acoplados que se desarrollan utilizando los principios de diseño reactivo que hemos descrito anteriormente. Son, por naturaleza, resistentes, receptivos, elásticos y orientados a mensajes. Al incorporar estos principios que son fundamentales para diseñar y desarrollar sistemas reactivos, los microservicios reactivos proporcionan los siguientes beneficios:
+
+\begin{itemize}
+    \item Los microservicios reactivos son elásticosLos microservicios reactivos son elásticos, lo que significa que pueden ampliarse y reducirse de forma independiente sin causar una ralentización general del sistema.
+\end{itemize}
+\begin{itemize}
+    \item Cada servicio puede ser supervisado, probado, depurado y actualizado de forma independiente por un solo equipo sin afectar a la estabilidad y capacidad de respuesta de un sistema.
+\end{itemize}
+\begin{itemize}
+    \item Los sistemas que utilizan microservicios reactivos tienden a ser más redundantes y tolerantes a fallos, con un tiempo de inactividad mínimo o nulo.
+\end{itemize}
+
+\section*{Tecnologías comunes}
+
+\begin{enumerate}
+    \item Java + Spring WebFlux
+    \item JavaScript + RxJS
+    \item Kotlin + Coroutines
+    \item Scala + Akka Streams
+\end{enumerate}
+
+\section*{Tecnologías del mercado que permiten usar reactividad}
+En el mercado existen muchas tecnologías que nos permiten la implementación de reactividad a más alto o bajo nivel, una de las más conocidas es https://reactivex.io/ que tiene APIS para la un gran número de lenguajes como \textbf{Javascript, PHP, Python, Java, C#, Ruby, Kotlin,} etcétera (¡la lista es larga!). Sin embargo, un acercamiento a estas implementaciones podemos verla de la mano de Redux, que nos abstrae de la complejidad de las profundidades de la Programación Reactiva.  
+
+\textbf{Redux} es una herramienta para la gestión de estado en apps Javascript que nació en 2015 y aunque suele asociarse a React, lo cierto es que es una librería agnóstica, que vale la pena conocer aunque no vayas a trabajar con React…
+
+\section*{Observaciones y comentarios}
+El paradigma reactivo no solo es una mejora técnica, sino un cambio de mentalidad. Adoptarlo implica comprender profundamente los flujos de datos, la asincronía, el desacoplamiento entre componentes y la resiliencia como principio arquitectónico.
+
+Los sistemas grandes están compuestos de otros más pequeños y por lo tanto dependen de las propiedades Reactivas de sus partes. Esto significa que los Sistemas Reactivos aplican principios de diseño para que estas propiedades sean válidas a cualquier escala, haciéndolas componibles. Los sistemas más grandes del mundo confían en arquitecturas basadas en estas propiedades y atienden las necesidades de miles de millones de personas diariamente. Es tiempo de aplicar estos principios de diseño conscientemente desde el inicio, en vez de redescubrirlos cada vez.cipios de software reactivos dentro de una sola aplicación y referente a como sus partes se comunican. La coordinación de los datos en las aplicaciones se basan en eventos, y no en mensajes.
+
+\section*{Conclusiones}
+\begin{enumerate}
+    \item El Reactive Manifesto proporciona un marco sólido para el diseño de sistemas modernos.
+    \item La programación reactiva permite construir aplicaciones más rápidas, resilientes y escalables.
+    \item Frameworks como WebFlux y Akka facilitan la implementación de estos principios.
+    \item El diseño basado en mensajes y flujos asincrónicos reduce los cuellos de botella.
+    \item La observabilidad y los patrones CQRS/Event Sourcing fortalecen la robustez del sistema.
+\end{enumerate}
+
+\section*{Bibliografía}
+\begin{itemize}
+    \item Bonér, J., Farley, D., Kuhn, R., \& Thompson, M. (2014). \textit{The Reactive Manifesto}. \url{https://www.reactivemanifesto.org/}
+    \item Spring WebFlux Documentation. \url{https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html}
+    \item Lightbend. (2021). \textit{Akka Documentation}. \url{https://doc.akka.io/docs/akka/current/}
+    \item Meijer, E., \& Bierman, G. (2011). \textit{A coinductive approach to stream processing}. Microsoft Research.
+    \item Stoyanovich, J. (2019). \textit{Reactive Programming with RxJava}. O'Reilly Media.
+\end{itemize}
+
+\end{document}
