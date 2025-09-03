@@ -1,0 +1,101 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ARTICULO 1 - ORQUESTACION DE SERVIDORES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{ORQUESTACION DE SERVIDORES} \\
+\textit{E. Jiménez López} \\
+7690-13-16349 Universidad Mariano Gálvez \\
+Seminario de tecnologías de información \\
+\textit{ejimenezl@miumg.edu.gt} \\
+\end{center}
+
+\textbf{Resumen} \\
+La orquestación de servidores constituye un elemento clave en la administración de infraestructuras modernas. Este artículo expone los fundamentos de la orquestación, sus objetivos principales, las herramientas más relevantes en la actualidad y los beneficios que ofrece en la eficiencia de los entornos tecnológicos. Se analiza cómo la automatización permite reducir errores humanos, optimizar tiempos de despliegue y garantizar la escalabilidad en los sistemas de producción. Asimismo, se presentan observaciones respecto al impacto en el trabajo de equipos de TI, conclusiones sobre la aplicabilidad en proyectos empresariales y una bibliografía que sustenta el análisis realizado. \\
+
+\textbf{Palabras clave:} orquestación, automatización, servidores, infraestructura, despliegue \\
+
+\textbf{Desarrollo del tema} \\
+La orquestación de servidores es la práctica que permite coordinar de manera automática tareas de administración de sistemas, desde la instalación de software hasta la configuración y monitoreo de aplicaciones. En entornos tradicionales, los administradores gestionaban manualmente cada servidor, lo que generaba inconsistencias y aumentaba la posibilidad de errores. Con la creciente complejidad de la infraestructura tecnológica, especialmente en arquitecturas basadas en la nube y sistemas distribuidos, la orquestación surgió como una respuesta necesaria. 
+
+Las herramientas de orquestación como Ansible, Puppet y Chef han transformado la manera en que las organizaciones administran sus servidores. Estas soluciones permiten definir configuraciones en archivos declarativos, lo que facilita la replicación en múltiples entornos. El concepto de \textit{infraestructura como código} se encuentra en el centro de la orquestación, ya que promueve la gestión sistemática y reproducible de los recursos. 
+
+Además, la orquestación asegura que los cambios realizados en un servidor se apliquen de forma homogénea en todos los sistemas relacionados. Esto no solo mejora la estabilidad de la infraestructura, sino que también permite a las empresas escalar rápidamente sus operaciones. Por ejemplo, un despliegue que antes tomaba días ahora puede completarse en minutos con un simple comando. 
+
+La adopción de estas prácticas ha impactado significativamente en la productividad de los equipos de TI. La reducción de tareas manuales libera tiempo para concentrarse en actividades estratégicas, mientras que la estandarización incrementa la confiabilidad de los sistemas. La seguridad también se ve reforzada, ya que la orquestación posibilita aplicar parches de manera simultánea en cientos de servidores, mitigando vulnerabilidades de forma más rápida. 
+
+En la actualidad, la orquestación de servidores es un requisito fundamental para empresas que operan bajo esquemas de alta disponibilidad. Gracias a esta práctica, es posible integrar de manera efectiva la administración de infraestructura con procesos de desarrollo continuo (CI/CD), habilitando ciclos de entrega más ágiles y seguros. \\
+
+\textbf{Orquestadores de contenedores} \\
+El auge de los contenedores ha cambiado la forma en la que los programadores conciben el desarrollo, el despliegue y el mantenimiento de las aplicaciones de software. Haciendo uso de las capacidades de aislamiento nativo de los sistemas operativos modernos, los contenedores soportan una separación de intereses (Separation of Concerns, SoC) parecida a la de las máquinas virtuales, pero sin consumir tantos recursos y con una mayor flexibilidad de despliegue en comparación con las máquinas virtuales basadas en hipervisores.
+Actualmente, la mayoría de las infraestructuras de las medianas y grandes empresas trabajan con Dockers en sus sistemas. Para mejorar su administración, dichos equipos de arquitectura y/o DevOps utilizan orquestadores, dependiendo el sistema, para mejorar: la automatización, implementación, escalabilidad, equilibrio de carga, disponibilidad y el sistema de redes de contenedores.\\
+
+\textbf{Kubernetes:} La principal ventaja de usar Kubernetes en su entorno, es que le ofrece la plataforma para programar y ejecutar contenedores en clústeres de máquinas virtuales o físicas.
+\begin{itemize}
+    \item Orquestar contenedores en múltiples hosts
+\end{itemize}
+\begin{itemize}
+    \item Hacer un mejor uso del hardware para maximizar los recursos necesarios para ejecutar sus aplicaciones empresariales
+\end{itemize}
+\begin{itemize}
+    \item Controlar y automatizar las implementaciones y actualizaciones de las aplicaciones
+\end{itemize}
+
+
+\textbf{Openshift:} “Red Hat OpenShift Container Platform es una plataforma de contenedores de Kubernetes empresarial, con operaciones automatizadas integrales para gestionar implementaciones de nube híbrida y multicloud”.
+\begin{itemize}
+    \item Sistema Operativo: Openshift solo con Linux, Fedora y CentOS
+\end{itemize}
+\begin{itemize}
+    \item Seguridad: Co Kubernetes está en mano de usuario
+\end{itemize}
+\begin{itemize}
+    \item CI/CD: integrado en Openshift
+\end{itemize}
+
+\textbf{Docker Swarm:} Herramienta integrada en Docker que permite agrupar una serie de hosts de Docker en un clúster y gestionarlos de forma centralizada, así como orquestar contenedores.
+\begin{itemize}
+    \item Integrado con la API de Docker Engine
+\end{itemize}
+\begin{itemize}
+    \item Redistribuye las cargas de trabajo si hay algún fallo en los nodos. Así se asegura alta disponibilidad.
+\end{itemize}
+\begin{itemize}
+    \item Administra los grupos de contenedores
+\end{itemize}
+
+
+
+
+\textbf{Observaciones y comentarios} \\
+La orquestación de servidores no solo es una técnica de optimización, sino también un cambio cultural en los equipos de TI. Adoptarla requiere capacitación, disciplina en la gestión de configuraciones y un compromiso con las mejores prácticas. Su mayor aporte radica en la estandarización y en la capacidad de responder a las demandas dinámicas de los entornos empresariales. \\
+
+\textbf{Conclusiones} \\
+1. La orquestación de servidores optimiza la administración de infraestructuras al reducir tareas manuales. \\
+2. Permite una mayor escalabilidad y confiabilidad en los sistemas. \\
+3. Favorece la seguridad mediante la aplicación ágil de parches. \\
+4. Es un pilar en la implementación de metodologías DevOps. \\
+
+\textbf{Bibliografía} \\
+Humble, J., & Farley, D. (2010). \textit{Continuous Delivery}. Addison-Wesley. \\
+Loukides, M., & Hüttermann, M. (2012). \textit{Infrastructure as Code}. O'Reilly Media. \\
+Turnbull, J. (2014). \textit{The Docker Book}. James Turnbull. \\
+
+URL del repositorio: https://github.com/usuario/repositorio 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AQUI IRAN LOS ARTICULOS 2-5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
