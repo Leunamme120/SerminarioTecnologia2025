@@ -1,0 +1,67 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ARTICULO 2 - KUBERNETES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{KUBERNETES} \\
+\textit{E. Jiménez López} \\
+7690-13-16349 Universidad Mariano Gálvez \\
+Seminario de tecnologías de la Información \\
+\textit{ejimenezl@miumg.edu.gt} \\
+\end{center}
+
+\textbf{Resumen} \\
+Kubernetes se ha consolidado como la plataforma de orquestación de contenedores más utilizada en la industria tecnológica. Este artículo describe su origen, sus principales componentes, las ventajas que aporta frente a la administración manual de contenedores y ejemplos de aplicación en entornos empresariales. Asimismo, se analizan las posibilidades de escalado, balanceo de carga y despliegue continuo que ofrece. Se busca demostrar cómo Kubernetes permite a las organizaciones modernizar su infraestructura y responder de manera ágil a las demandas del mercado. \\
+
+\textbf{Palabras clave:} Kubernetes, contenedores, orquestación, escalabilidad, DevOps \\
+
+\textbf{Desarrollo del tema} \\
+Kubernetes, también conocido como K8s, es un sistema de código abierto desarrollado inicialmente por Google y actualmente gestionado por la Cloud Native Computing Foundation (CNCF). Su propósito principal es automatizar la implementación, el escalado y la administración de aplicaciones en contenedores. En contraste con los métodos manuales, Kubernetes ofrece una plataforma robusta y flexible que abstrae la complejidad de gestionar múltiples contenedores en clústeres distribuidos. 
+
+Entre sus componentes más relevantes se encuentran los \textit{Pods}, que representan la unidad mínima de ejecución, los \textit{Deployments}, que facilitan el control de versiones y actualizaciones, y los \textit{Services}, que permiten la exposición de aplicaciones al exterior y la comunicación interna entre componentes. Los \textit{Namespaces} proporcionan aislamiento lógico para organizar recursos dentro de un mismo clúster. 
+
+Las ventajas de Kubernetes incluyen la capacidad de escalar aplicaciones automáticamente según la demanda, mantener alta disponibilidad de los servicios y distribuir cargas de trabajo de manera eficiente. Además, facilita la integración con pipelines de integración y entrega continua (CI/CD), lo que acelera la entrega de nuevas funcionalidades. 
+
+Un ejemplo práctico es el despliegue de una aplicación web en Kubernetes: los contenedores que alojan el front-end, back-end y la base de datos se configuran como Pods, mientras que los Services garantizan la comunicación estable. Si la demanda de usuarios aumenta, Kubernetes puede lanzar automáticamente más réplicas para equilibrar la carga. 
+
+En el contexto empresarial, Kubernetes se ha convertido en el estándar de facto para aplicaciones nativas en la nube. Empresas como Spotify, Airbnb y Shopify lo utilizan para gestionar sus plataformas a gran escala. La portabilidad que ofrece permite ejecutar los mismos despliegues tanto en nubes públicas como en entornos locales, incrementando la flexibilidad tecnológica. \\
+
+\textbf{¿Por qué usar Kubernetes?} \\
+Mantener en funcionamiento las aplicaciones en contenedores puede ser complejo, porque suelen incluir muchos contenedores implementados en diferentes máquinas. Kubernetes proporciona una manera de programar e implementar esos contenedores, además de escalarlos al estado deseado y administrar sus ciclos de vida. Use Kubernetes para implementar las aplicaciones basadas en contenedores de forma portátil, escalable y extensible.\\
+
+\textbf{Cargas de trabajo portátiles:} 
+Dado que las aplicaciones de contenedor son independientes de la infraestructura, se convierten en portátiles cuando se ejecutan en Kubernetes. Puede moverlas de las máquinas locales a producción entre el entorno local, un entorno híbrido y varias plataformas, todo ello manteniendo la coherencia entre los entornos.\\
+\textbf{Escalabilidad de contenedores con facilidad:} 
+Defina aplicaciones en contenedores complejas e impleméntelas en un clúster de servidores o incluso en varios clústeres con Kubernetes. A medida que Kubernetes escala las aplicaciones según el estado deseado, supervisa automáticamente los contenedores y los mantiene en buen estado.\\
+\textbf{Aplicaciones más extensibles:} 
+Una gran comunidad de desarrolladores y compañías de código abierto crea activamente extensiones y complementos que agregan funcionalidad a Kubernetes, como seguridad, supervisión y administración. Además, el programa de conformidad con la certificación para Kubernetes (Certified Kubernetes Conformance Program) requiere que cada versión de Kubernetes ofrezca API que faciliten el uso de esas ofertas de la comunidad.
+
+
+\textbf{Observaciones y comentarios} \\
+Kubernetes no solo es una herramienta, sino un ecosistema que requiere de conocimientos especializados y buenas prácticas para su correcta implementación. Su curva de aprendizaje es elevada, pero los beneficios a largo plazo en términos de escalabilidad, eficiencia y resiliencia justifican la inversión en su adopción. \\
+
+\textbf{Conclusiones} \\
+1. Kubernetes es la plataforma líder en orquestación de contenedores. \\
+2. Ofrece escalabilidad automática y alta disponibilidad. \\
+3. Facilita la integración con metodologías DevOps. \\
+4. Es un estándar para aplicaciones nativas en la nube. \\
+
+\textbf{Bibliografía} \\
+Burns, B., Grant, B., Oppenheimer, D., Brewer, E., & Wilkes, J. (2016). \textit{Borg, Omega, and Kubernetes}. Communications of the ACM, 59(5), 50–57. \\
+Hightower, K., Burns, B., & Beda, J. (2017). \textit{Kubernetes: Up and Running}. O’Reilly Media. \\
+Richardson, C. (2018). \textit{Microservices Patterns}. Manning Publications. \\
+
+URL del repositorio: https://github.com/usuario/repositorio 
+
+\end{document}
+
