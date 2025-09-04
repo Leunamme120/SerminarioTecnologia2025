@@ -1,0 +1,73 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ARTICULO 3 - MICROSERVICIOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{MICROSERVICIOS} \\
+\textit{E. Jiménez López} \\
+7690-13-16349 Universidad Mariano Gálvez \\
+Seminario tecnologías de Información \\
+\textit{jperez@gmail.com} \\
+\end{center}
+
+\textbf{Resumen} \\
+El enfoque de microservicios representa una evolución en la arquitectura de software que busca superar las limitaciones de los sistemas monolíticos. En este artículo se examinan los principios fundamentales de los microservicios, sus ventajas en términos de escalabilidad, resiliencia y despliegue independiente, así como los retos que implica su adopción. Se presentan ejemplos prácticos y casos de uso en la industria, destacando la importancia de componentes como los API Gateway y los Service Mesh. Finalmente, se discuten observaciones sobre el impacto cultural y técnico de esta arquitectura y se formulan conclusiones acerca de su aplicabilidad en la transformación digital. \\
+
+\textbf{Palabras clave:} microservicios, arquitectura, escalabilidad, resiliencia, API Gateway \\
+
+\textbf{Desarrollo del tema} \\
+La arquitectura de microservicios se define como un estilo de diseño en el que una aplicación se compone de pequeños servicios independientes que se comunican entre sí mediante interfaces bien definidas, usualmente APIs basadas en HTTP o mensajería. Cada microservicio es responsable de una funcionalidad específica del negocio y puede desarrollarse, desplegarse y escalarse de manera autónoma. 
+
+En contraste con las aplicaciones monolíticas, donde todas las funcionalidades se integran en un solo bloque de código, los microservicios permiten una modularidad más clara. Este enfoque proporciona mayor flexibilidad, ya que los equipos de desarrollo pueden trabajar en paralelo en diferentes componentes sin afectar el resto de la aplicación. Además, facilita la adopción de diversas tecnologías y lenguajes de programación según la necesidad de cada servicio. 
+
+Uno de los beneficios más notables de los microservicios es la escalabilidad. En un sistema monolítico, aumentar la capacidad para manejar más usuarios implica escalar toda la aplicación. En cambio, con microservicios es posible escalar únicamente los componentes que requieren más recursos, optimizando así los costos y el rendimiento. 
+
+La resiliencia también es un aspecto clave: si un microservicio falla, no necesariamente afecta al resto de la aplicación, lo que incrementa la disponibilidad general. Sin embargo, esta arquitectura introduce nuevos desafíos como la complejidad en la comunicación entre servicios, la gestión de datos distribuidos, el monitoreo y la seguridad. Herramientas como los API Gateway centralizan el acceso y la autenticación, mientras que tecnologías como Service Mesh (por ejemplo, Istio o Linkerd) ayudan a gestionar el tráfico, la observabilidad y las políticas de seguridad entre servicios. 
+
+Ejemplos en la industria incluyen a Netflix y Amazon, pioneros en la adopción de microservicios para escalar sus plataformas globales. Estas compañías demostraron que este enfoque no solo soporta altos volúmenes de usuarios, sino que también acelera la innovación al permitir la entrega continua de nuevas características, los limites de ésta tecnologia son pocos, ya que se cuenta con una elasticidad referente a espacio, también cuanta con soporte, con ello se garantiza la continuidad delo procesos.  \\
+
+\textbf{Características} \\
+
+\textbf{1. Varios servicios de componentes} \\
+Los microservicios se componen de servicios de componentes individuales y poco vinculados que se pueden desarrollar, implementar, operar, cambiar y volver a implementar sin afectar al funcionamiento de otros servicios o a la integridad de una aplicación. Esto permite una implementación rápida y fácil de cada una de las funciones de una aplicación. \\
+\textbf{2. Muy fáciles de mantener y de probar} \\
+Los microservicios permiten a los equipos experimentar con nuevas funciones y revertirlas si no funcionan. Esto facilita la actualización del código y acelera el tiempo de salida al mercado de nuevas funciones. Además, simplifica el proceso de aislamiento y corrección de fallos y errores en los servicios individuales. \\
+\textbf{3. Pertenecen a equipos pequeños} \\
+Los equipos pequeños e independientes suelen crear un servicio dentro de microservicios, lo que los anima a adoptar prácticas de metodología ágil y de DevOps. Los equipos pueden trabajar de forma independiente y moverse rápidamente, lo que acorta el ciclo de desarrollo. \\
+\textbf{4. Se organizan en torno a capacidades empresariales} \\
+Un enfoque de microservicios permite organizar los servicios en torno a las capacidades empresariales. Los equipos son multifuncionales, disponen de la gama completa de habilidades necesarias para el desarrollo y trabajan para crear una funcionalidad concreta. \\
+\textbf{5. Infraestructura automatizada} \\
+Los equipos que crean y mantienen microservicios suelen utilizar prácticas de automatización de infraestructuras, como la integración continua (CI), la entrega continua (CD) y la implementación continua (también CD). Esto permite a los equipos crear e implementar cada servicio de forma independiente sin afectar a los demás equipos, así como implementar una nueva versión de un servicio en paralelo con la versión anterior.\\
+
+\textbf{Comparación entre la arquitectura monolítica y la arquitectura de microservicios} \\
+Una arquitectura monolítica es un modelo tradicional de un programa de software que se compila como una unidad unificada y que es autónoma e independiente de otras aplicaciones. Una arquitectura de microservicios es el concepto opuesto al de la arquitectura monolítica, ya que es un método que se basa en una serie de servicios que se pueden implementar de forma independiente. La arquitectura monolítica puede resultar práctica al principio de un proyecto para aliviar la sobrecarga cognitiva de la gestión de código, así como la implementación. Pero una vez que una aplicación monolítica se vuelve grande y compleja, resulta difícil escalarla, la implementación continua pasa a ser un desafío y las actualizaciones pueden resultar complicadas.\\
+
+\textbf{Observaciones y comentarios} \\
+La arquitectura de microservicios no es una solución universal y su implementación requiere de una madurez técnica y organizacional significativa. Adoptarla sin una estrategia clara puede derivar en un sistema más complejo de lo necesario. Sin embargo, cuando se aplica con buenas prácticas, se convierte en un habilitador fundamental de la transformación digital. \\
+\\
+\\
+\\
+\textbf{Conclusiones} \\
+1. Los microservicios ofrecen escalabilidad y resiliencia superiores a las arquitecturas monolíticas. \\
+2. Permiten el desarrollo y despliegue independiente de funcionalidades. \\
+3. Requieren una infraestructura robusta para gestión, monitoreo y seguridad. \\
+4. Son esenciales en empresas que buscan agilidad e innovación constante. \\
+
+\textbf{Bibliografía} \\
+Newman, S. (2015). \textit{Building Microservices}. O’Reilly Media. \\
+Richardson, C. (2018). \textit{Microservices Patterns}. Manning Publications. \\
+Fowler, M. (2014). \textit{Microservices: a definition of this new architectural term}. martinfowler.com. \\
+
+URL del repositorio: https://github.com/usuario/repositorio 
+
+\end{document}
