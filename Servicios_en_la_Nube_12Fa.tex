@@ -1,0 +1,99 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{times}
+\usepackage{geometry}
+\geometry{top=2.4cm, bottom=2.4cm, left=2.4cm, right=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+%-----------------------------------------
+\begin{document}
+
+\begin{center}
+\textbf{\MakeUppercase{SERVICIOS EN LA NUBE}} \\[6pt]
+\textit{E. Jiménez López} \\[4pt]
+7690-13-16349  Universidad Mariano Gálvez \\[2pt]
+Seminario de tecnologías de Información \\[2pt]
+\textit{ejimenezl@miumg.edu.gt}
+\end{center}
+
+\textbf{Resumen}  \\
+La implementación de servicios en la nube bajo los lineamientos del modelo de \textit{12-Factor Application} permite desarrollar aplicaciones modernas, escalables y portables. El objetivo del presente trabajo es exponer cómo los doce factores influyen en la arquitectura de sistemas desplegados en plataformas de nube, considerando aspectos como la gestión de dependencias, configuración, servicios externos y procesos sin estado. Los resultados obtenidos en el análisis muestran que la adopción de estos principios favorece la eficiencia operativa, reduce la complejidad de despliegue y mejora la resiliencia de los sistemas. Las conclusiones se enfocan en el papel de los proveedores de nube (AWS, Azure y GCP) como habilitadores de estas prácticas, consolidando un enfoque estandarizado que facilita la transición hacia arquitecturas distribuidas y entornos híbridos.  \\
+
+\textbf{Palabras claves:} nube, aplicaciones, escalabilidad, 12 factores, arquitectura  \\
+
+\textbf{Desarrollo del tema} \\ 
+La computación en la nube ha transformado el paradigma de implementación de aplicaciones, ofreciendo acceso bajo demanda a recursos computacionales. Sin embargo, aprovechar plenamente este entorno requiere un marco de buenas prácticas que asegure portabilidad, escalabilidad y facilidad de mantenimiento. En este contexto surge el modelo \textit{12-Factor App}, propuesto por Heroku en 2011.  \\
+
+Cada uno de los doce factores representa un principio fundamental en el ciclo de vida de las aplicaciones:  \\
+\begin{itemize}
+\item \textbf{Código base:} un único repositorio versionado.  
+\item \textbf{Dependencias:} declaradas de forma explícita.  
+\item \textbf{Configuración:} gestionada en variables de entorno.  
+\item \textbf{Servicios de apoyo:} bases de datos, colas y APIs como recursos externos.  
+\item \textbf{Construir, lanzar, ejecutar:} separación clara de fases.  
+\item \textbf{Procesos:} sin estado, escalables horizontalmente.  
+\item \textbf{Asignación de puertos:} la aplicación expone servicios vía puerto propio.  
+\item \textbf{Concurrencia:} escalamiento a través de procesos.  
+\item \textbf{Desacoplamiento de entornos:} mantener coherencia entre desarrollo, pruebas y producción.  
+\item \textbf{Logs:} flujos de eventos gestionados externamente.  
+\item \textbf{Administración de procesos:} tareas ad hoc ejecutadas en el mismo entorno.  
+\end{itemize}
+
+En \textbf{AWS}, los 12 factores se aplican mediante servicios como Elastic Beanstalk, RDS y CloudWatch. En \textbf{Azure}, App Service, Key Vault y Monitor proporcionan la infraestructura necesaria. En \textbf{GCP}, soluciones como App Engine, Cloud SQL y Stackdriver permiten mantener la paridad de entornos y el registro centralizado de logs.  \\
+
+El impacto de este modelo en la práctica profesional es evidente: los equipos logran despliegues consistentes, integración continua y mejor aprovechamiento de entornos multicloud e híbridos. Asimismo, las metodologías ágiles y el uso de contenedores (Docker, Kubernetes) potencian el cumplimiento de los 12 factores en escenarios reales.\\
+
+\textbf{Modelos de despliegue en la nube}  \\
+Al adoptar la arquitectura en la nube, hay tres tipos distintos de modelos de despliegue en la nube que ayudan a ofrecer servicios de cloud computing: nube pública, nube privada y nube híbrida.\\
+\begin{itemize}
+    \item \textbf{Nube pública:} Las nubes públicas proporcionan recursos a través de Internet, como recursos de computación, almacenamiento, red, entornos de desarrollo y despliegue y aplicaciones. Estos servicios pertenecen y los ejecutan proveedores externos de servicios en la nube, como Google Cloud.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Nube privada:} Las nubes privadas las crea, ejecuta y utiliza una sola organización, normalmente on‐premise. Ofrecen un mayor control, personalización y seguridad de los datos, pero conllevan costes y limitaciones de recursos similares a los de los entornos de TI tradicionales.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Nube híbrida:} Los entornos que combinan al menos un entorno de computación privado (infraestructura de TI tradicional o nube privada, incluida la perimetral) con una o varias nubes públicas se denominan nubes híbridas. Gracias a ellas, puedes aprovechar los recursos y servicios de diferentes entornos de computación y elegir el que mejor se adapte a las cargas de trabajo.
+\end{itemize}
+
+\textbf{Tipos de servicios en la nube}  \\
+Dentro de los modelos de despliegue en la nube, hay varios tipos de servicios en la nube, que incluye la infraestructura, las plataformas y las aplicaciones de software. \\
+\begin{itemize}
+    \item IaaS: compras los ingredientes envasados, como pasta fresca y salsa hecha por otra persona, y los usas para cocinar en casa.
+\end{itemize}
+\begin{itemize}
+    \item PaaS: pides comida para llevar o a domicilio, lo que implica que la comida ya está preparada y no tienes que preocuparte por los ingredientes ni cómo se cocina, pero sí por dónde te la vas a comer, los utensilios y limpiar después de la comida.
+\end{itemize}
+\begin{itemize}
+    \item SaaS: llamas con antelación al restaurante y pides la comida que quieras. Te preparan todo con antelación para que lo único que tengas que hacer sea ir allí y comer.
+\end{itemize}
+\begin{itemize}
+    \item Sin servidor: sales a cenar y pides pasta en un restaurante, ya sea solo o con amigos. Pagas y comes lo que quieras, y el restaurante se asegura de que dispone de suficientes ingredientes y personal para hacer el pedido sin tener que esperar mucho tiempo.
+\end{itemize}
+
+
+\textbf{Observaciones y comentarios}  \\
+El análisis del modelo 12-Factor demuestra que su adopción no solo responde a necesidades técnicas, sino también a la exigencia empresarial de contar con aplicaciones flexibles y adaptables. En particular, su relación con metodologías DevOps y servicios administrados de nube ofrece una ventaja competitiva considerable.  \\
+
+\textbf{Conclusiones}  \\
+1. Los 12 factores constituyen un estándar para el diseño de aplicaciones en la nube. \\ 
+2. Su aplicación garantiza portabilidad, escalabilidad y mantenibilidad.  \\
+3. Los proveedores de nube integran servicios que facilitan su adopción.  \\
+4. La combinación con contenedores y DevOps consolida entornos eficientes.  \\
+5. Representan un marco fundamental para arquitecturas modernas distribuidas.  \\
+
+\textbf{Bibliografía}  \\
+Heroku. (2011). \textit{The Twelve-Factor App}. Recuperado de \url{https://12factor.net}  
+
+Amazon Web Services. (2023). \textit{AWS Elastic Beanstalk Documentation}. Recuperado de \url{https://docs.aws.amazon.com/elasticbeanstalk}  
+
+Google Cloud. (2023). \textit{Cloud Run and App Engine Documentation}. Recuperado de \url{https://cloud.google.com/run}  
+
+Microsoft Azure. (2023). \textit{App Service Documentation}. Recuperado de \url{https://learn.microsoft.com/azure/app-service}  \\
+
+
+\textit{Repositorio Git: https://github.com/usuario/12factor-cloud}
+
+
+\end{document}
