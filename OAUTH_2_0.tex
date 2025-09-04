@@ -1,0 +1,84 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ARTICULO 4 - OAUTH 2.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{OAUTH 2.0} \\
+\textit{E. Jíménez López} \\
+7690-13-16349 Universidad Mariano Gálvez \\
+Seminario de tecnologias de información \\
+\textit{ejimenezl@miumg.edu.gt} \\
+\end{center}
+
+\textbf{Resumen} \\
+OAuth 2.0 es un protocolo de autorización ampliamente adoptado que permite a aplicaciones y servicios acceder de manera segura a recursos en nombre de un usuario, sin necesidad de compartir credenciales sensibles. Este artículo analiza los fundamentos del protocolo, sus principales flujos de autorización, los roles involucrados y ejemplos de implementación en aplicaciones modernas. Se destacan los beneficios de seguridad que ofrece frente a modelos tradicionales de autenticación y autorización, así como los retos que implica su adopción. Se concluye con observaciones sobre su relevancia en la protección de datos en entornos digitales. \\
+
+\textbf{Palabras clave:} OAuth 2.0, autorización, autenticación, seguridad, API \\
+
+\textbf{Desarrollo del tema} \\
+OAuth 2.0 es un estándar abierto que define un marco de autorización para aplicaciones que solicitan acceso limitado a recursos protegidos en nombre de un usuario. La premisa central es permitir que los usuarios autoricen a una aplicación de terceros a acceder a sus datos sin necesidad de entregar sus credenciales. De esta forma, se mejora la seguridad y se reducen riesgos de exposición. 
+
+El protocolo se estructura en torno a varios roles: el \textit{Resource Owner} (propietario del recurso, normalmente el usuario), el \textit{Client} (la aplicación que solicita acceso), el \textit{Authorization Server} (servidor que autentica al usuario y emite tokens) y el \textit{Resource Server} (servidor que almacena los recursos protegidos). La comunicación entre estos actores se realiza mediante el uso de tokens de acceso, generalmente en formato JSON Web Token (JWT). 
+
+Existen diferentes flujos o \textit{grant types} en OAuth 2.0, diseñados para distintos escenarios de uso. El flujo de \textit{Authorization Code} es el más seguro y común en aplicaciones web, ya que permite la obtención de tokens mediante un intercambio controlado entre cliente y servidor. El flujo de \textit{Client Credentials} se utiliza en integraciones de servidor a servidor, mientras que el flujo de \textit{Implicit} y el de \textit{Password} han caído en desuso por sus limitaciones de seguridad. 
+
+En la práctica, OAuth 2.0 es la base de los sistemas de inicio de sesión social, como el "Iniciar sesión con Google" o "Iniciar sesión con Facebook". También es ampliamente utilizado en APIs modernas, donde clientes autorizados pueden consumir servicios de forma segura. La revocación y expiración de tokens agregan un nivel adicional de control sobre el acceso a los datos. 
+
+No obstante, la implementación de OAuth 2.0 requiere precauciones. Una configuración incorrecta puede exponer vulnerabilidades, como el robo de tokens o ataques de redirección. Por ello, es necesario complementarlo con protocolos adicionales como OpenID Connect para gestionar la identidad de manera más completa. \\
+
+\textbf{Principios} \\
+OAuth 2.0 es un protocolo de autorización y NO un protocolo de autenticación. Como tal, está diseñado principalmente como un medio para conceder acceso a un conjunto de recursos, por ejemplo, API remotas o datos de usuario.\\
+Auth 2.0 utiliza tokens de acceso. Un Token de acceso es un dato que representa la autorización para acceder a los recursos en nombre del usuario final. OAuth 2.0 no define un formato específico para los tokens de acceso. Sin embargo, en algunos contextos, se suele utilizar el formato JSON Web Token (JWT). Esto permite a los emisores de tokens incluir datos en el propio token. Además, por razones de seguridad, los tokens de acceso pueden tener una fecha de caducidad.\\
+
+\textbf{¿Cómo funciona OAuth 2.0?} \\
+En el nivel más básico, antes de poder utilizar OAuth 2.0, el cliente debe adquirir sus propias credenciales, un id de cliente y un client secret, del servidor de autorización para identificarse y autenticarse al solicitar un token de acceso. Con OAuth 2.0, las solicitudes de acceso son iniciadas por el cliente, por ejemplo, una aplicación móvil, un sitio web, una aplicación de televisión inteligente, una aplicación de escritorio, etc. La solicitud, el intercambio y la respuesta de los tokens siguen el siguiente flujo general: \\
+
+\begin{enumerate}
+    \item El cliente solicita autorización (solicitud de autorización) al servidor de autorización, proporcionando el id y el client secret como identificación; también proporciona los ámbitos y un URI de extremo (URI de redireccionamiento) al que enviar el token de acceso o el código de autorización.
+    \item El servidor de autorización autentica al cliente y verifica que los ámbitos solicitados están permitidos.
+    \item El propietario del recurso interactúa con el servidor de autorización para conceder el acceso.
+    \item servidor de autorización redirige de vuelta al cliente con un código de autorización o un token de acceso, según el tipo de concesión, como se explicará en la siguiente sección. También puede devolverse un token de actualización.
+    \item el token de acceso, el cliente solicita acceso al recurso desde el servidor de recursos.
+\end{enumerate}
+
+\textbf{Roles} \\
+\begin{itemize}
+    \item Propietario del recurso: El usuario o sistema que posee los recursos protegidos y puede conceder acceso a ellos. 
+\end{itemize}
+\begin{itemize}
+    \item Cliente: El cliente es el sistema que requiere acceso a los recursos protegidos. Para acceder a los recursos, el cliente debe poseer el token de acceso correspondiente.
+\end{itemize}
+\begin{itemize}
+    \item Servidor de autorización: Este servidor recibe las solicitudes de tokens de acceso del cliente y las emite una vez que el propietario del recurso se ha autenticado y ha dado su consentimiento.
+\end{itemize}
+\begin{itemize}
+    \item Servidor de recursos: Un servidor que protege los recursos del usuario y recibe las solicitudes de acceso del cliente. Acepta y valida un token de acceso del cliente y le devuelve los recursos adecuados.
+\end{itemize}
+
+\textbf{Observaciones y comentarios} \\
+OAuth 2.0 es un pilar fundamental en la seguridad digital actual, pero debe implementarse siguiendo estrictamente las mejores prácticas. Su flexibilidad lo hace aplicable a múltiples escenarios, aunque dicha versatilidad también incrementa la complejidad en su configuración. \\
+
+\textbf{Conclusiones} \\
+1. OAuth 2.0 ofrece un modelo seguro de autorización sin compartir credenciales. \\
+2. Sus flujos de autorización se adaptan a diferentes contextos de uso. \\
+3. Es la base de los sistemas de autenticación moderna en la web. \\
+4. Requiere configuraciones cuidadosas para evitar vulnerabilidades. \\
+
+\textbf{Bibliografía} \\
+Hardt, D. (2012). \textit{The OAuth 2.0 Authorization Framework}. IETF RFC 6749. \\
+Jones, M., Bradley, J., & Sakimura, N. (2015). \textit{JSON Web Token (JWT)}. IETF RFC 7519. \\
+De Medeiros, B. (2018). \textit{OAuth 2 in Action}. Manning Publications. \\
+
+URL del repositorio: https://github.com/usuario/repositorio 
+
+\end{document}
